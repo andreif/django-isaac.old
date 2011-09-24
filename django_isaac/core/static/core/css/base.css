@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Lobster";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Lobster");
+    src: url("/static/core/fonts/Lobster.woff") format("woff"); }
+
+@font-face {
+    font-family: "Vollkorn";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Vollkorn Regular");
+    src: local("Vollkorn-Regular");
+    src: url("/static/core/fonts/Vollkorn-Regular.woff") format("woff"); }
+
+@font-face {
+    font-family: "Vollkorn";
+    font-style: italic;
+    font-weight: normal;
+    src: local("Vollkorn Italic");
+    src: local("Vollkorn-Italic");
+    src: url("/static/core/fonts/Vollkorn-Italic.woff") format("woff"); }
+
+body {
+    text-align: center;
+    font-family: "Vollkorn", Georgia, "Times New Roman", Times, Serif;
+    font-size: 0.98em;
+    color: #333333;
+    background-color: rgb(218, 216, 204);
+    background-image: url("/static/core/imgs/background.jpg");
+    text-shadow: 1px 1px white;
+    moz-text-shadow: 1px 1px white; }
+
+a {
+    text-decoration: none;
+    color: #2d445e;
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 0 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+
+header {
+    margin: 50px auto;
+    text-align: left;
+    width: 600px;
+    margin-top: 100px; }
+
+    header h1 {
+        font-family: "Lobster";
+        font-size: 134px; }
+
+    header h2 {
+        font-size: 30px;
+        width: 240px;
+        margin-top: -234px;
+        margin-left: 350px;
+        position: absolute; }
+
+aside {
+    width: 100px;
+    text-align: right;
+    text-transform: uppercase;
+    margin-left: -130px;
+    position: absolute;
+    font-weight: bold;
+    color: #2d445e; }
+
+section {
+    margin: 50px auto;
+    text-align: left;
+    width: 600px;
+    line-height: 24px; }
+
+footer {
+    margin: 50px auto;
+    text-align: left;
+    width: 600px;
+    margin-bottom: 100px;
+    font-size: 0.76em;
+    color: #777777;
+    text-align: center;
+    line-height: 20px; }
+
+    footer a {
+        color: #708faf; }

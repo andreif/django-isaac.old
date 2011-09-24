@@ -1,0 +1,29 @@
+{% spaceless %}
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Bluescreen</title>
+
+            <link href='/static/core/imgs/favicon.png' rel='shortcut icon' type='image/ico'>
+
+            <script src='/static/core/js/libs/modernizer-2.0.5.min.js'></script>
+
+            <link rel='stylesheet' media='all' href='/static/core/css/bluescreen.css' />
+        </head>
+
+        <body>
+            <div id='bluescreen'>
+                <h1>Internet Exploader</h1>
+                <p>An error has occured. To continue please install a modern web browser.</p>
+                <p>&#42; Give <a href="http://firefox.com/">Firefox</a> or <a href="http://www.google.com/chrome">Chrome</a> a try. If all else fails, simply download the latest <a href="http://microsoft.com/windows/internet-explorer/">IE</a>.</p>
+                <p>&#42; Press CTRL+ALT+DEL and force close IE because you are currently killing narwhals. Using a modern browser will save the lives of thousands of baby narwhals each year.</p>
+                <p>Error: 55 : 415245 : 4E455244 : NARWHAL : KILLER</p>
+                <h2><a href='http://browsehappy.com/'>Upgrade to a modern browser to continue _</a></h2>
+            </div>
+
+            {% if not debug %}
+                <script src='/static/core/js/libs/google.analytics.min.js'></script>
+            {% endif %}
+        </body>
+    </html>
+{% endspaceless %}
