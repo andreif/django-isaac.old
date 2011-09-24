@@ -43,6 +43,8 @@ TEMPLATE_DIRS = (
 )
 TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.debug',)
 
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media/')
+MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'static/')
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
@@ -55,8 +57,6 @@ STATICFILES_DIRS = (
 )
 COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
 
-ROOT_URLCONF = 'urls'
-
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,10 +64,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
+ROOT_URLCONF = 'urls'
+
 INSTALLED_APPS = (
     'django.contrib.staticfiles',
-    'gunicorn',
     'south',
     'compressor',
-    'django_isaac.core',
+    'core',
+    'gunicorn',
 )

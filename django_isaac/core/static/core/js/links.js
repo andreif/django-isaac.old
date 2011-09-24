@@ -106,11 +106,11 @@
         'defaultPosition': 'top',
         'delay': 250
     });
-    $('.topLink').tipTip({
+    $('.top-link').tipTip({
         'defaultPosition': 'top',
         'delay': 250
     });
-    $('.bottomLink').tipTip({
+    $('.bottom-link').tipTip({
         'defaultPosition': 'bottom',
         'delay': 250
     });
