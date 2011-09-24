@@ -18,7 +18,7 @@ if HOSTNAME == 'nebula':
         }
     }
 
-    CACHE_MIDDLEWARE_SECONDS = 2592000
+    CACHE_MIDDLEWARE_SECONDS = 60 * 15
 else:
     DEBUG = True
 
@@ -58,9 +58,9 @@ STATICFILES_DIRS = (
 COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
