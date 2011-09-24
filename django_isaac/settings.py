@@ -15,6 +15,7 @@ if HOSTNAME == 'nebula':
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
             'LOCATION': '127.0.0.1:11211',
             'KEY_PREFIX': 'isaacbythewood',
+            'TIMEOUT': 60 * 15,
         }
     }
 
