@@ -1,2 +1,15 @@
+# python
 *.pyc
+
+# django
 development.db
+
+# vagrant
+.vagrant
+
+# virtualenv
+bin/
+build/
+distribute-*.tar.gz
+include/
+lib/
