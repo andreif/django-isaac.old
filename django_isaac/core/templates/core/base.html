@@ -39,20 +39,22 @@
                 <link rel="stylesheet" href="/static/core/css/libs/boilerplate.helpers-2.0.min.css">
             {% endcompress %}
 
-            <script>
-                WebFontConfig = {
-                    google: { families: [ 'Lobster::latin', 'Vollkorn:400italic,400:latin' ] }
-                };
-                (function() {
-                    var wf = document.createElement('script');
-                    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                    wf.type = 'text/javascript';
-                    wf.async = 'true';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(wf, s);
-                })();
-            </script>
+            {% compress js inline %}
+                <script>
+                    WebFontConfig = {
+                        google: { families: [ 'Lobster::latin', 'Vollkorn:400italic,400:latin' ] }
+                    };
+                    (function() {
+                        var wf = document.createElement('script');
+                        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                        wf.type = 'text/javascript';
+                        wf.async = 'true';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(wf, s);
+                    })();
+                </script>
+            {% endcompress %}
 
             <script src="/static/core/js/libs/modernizer-2.0.5.min.js"></script>
         </head>
@@ -89,12 +91,14 @@
             {% endcompress %}
 
             {% if not debug %}
-                <script>
-                    window._gaq = [['_setAccount','UA-24288942-3'],['_trackPageview'],['_trackPageLoadTime']];
-                    Modernizr.load({
-                        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-                    });
-                </script>
+                {% compress js inline %}
+                    <script>
+                        window._gaq = [['_setAccount','UA-24288942-3'],['_trackPageview'],['_trackPageLoadTime']];
+                        Modernizr.load({
+                            load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+                        });
+                    </script>
+                {% endcompress %}
             {% endif %}
 
             <!--[if lt IE 7 ]>
