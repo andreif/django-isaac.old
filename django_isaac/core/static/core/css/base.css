@@ -17,7 +17,7 @@ a {
     -moz-border-radius: 3px;
     border-radius: 3px; }
 
-.no-js a:hover {
+.no-js a:hover, .no-rgba a:hover {
     background-color: white; }
 
 #no-js-notice {

@@ -97,10 +97,10 @@
         return $('#fade-wrapper').fadeIn(1200);
     };
 
-    $('#links li').hover(linksInBackground, linksOutBackground);
-    $('a').not('#links a').hover(aInBorder, aOutBorder);
-    $('section a').not('#links a').not('footer a').hover(aInBackground, aOutBackground);
-    $('footer a').not('#links a').not('section a').hover(footerAInBackground, footerAOutBackground);
+    $('.rgba #links li').hover(linksInBackground, linksOutBackground);
+    $('.rgba a').not('.rgba #links a').hover(aInBorder, aOutBorder);
+    $('.rgba section a').not('.rgba #links a').not('.rgba footer a').hover(aInBackground, aOutBackground);
+    $('.rgba footer a').not('.rgba #links a').not('.rgba section a').hover(footerAInBackground, footerAOutBackground);
 
     $('a').tipTip({
         'defaultPosition': 'top',

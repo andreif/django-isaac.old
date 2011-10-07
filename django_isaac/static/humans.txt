@@ -5,7 +5,6 @@
 /* TEAM */
     Isaac Bythewood
     Site: http://isaacbythewood.com/
-    Twitter: http://twitter.com/OveRSharD
     Location: Morganton, NC
 
 /* SITE */
