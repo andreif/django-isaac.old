@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <!--              ___           ___           ___           ___     
     ___          /  /\         /  /\         /  /\         /  /\    
    /  /\        /  /:/_       /  /::\       /  /::\       /  /:/    
@@ -13,55 +13,94 @@
 {% spaceless %}
     {% load compress %}
 
-    <html>
+    <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
         <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
             <title>Isaac Bythewood's {% block title %}{% endblock %}</title>
+            <meta name="description" content="The personal website of Isaac Bythewood. A website developer located in Morgaton, NC.">
+            <meta name="author" content="Isaac Bythewood">
 
-            <link href="/static/core/imgs/favicon.png" rel="shortcut icon" type="image/ico"> 
-            <link href="/static/core/imgs/favicon.png" rel="apple-touch-icon"> 
+            <meta name="viewport" content="width=device-width,initial-scale=1">
 
-            <!--[if IE]>
-                <script src="/static/core/js/libs/modernizer-2.0.5.min.js"></script>
-            <![endif]--> 
-            <!--[if lte IE 8]>
-                <meta content="0; url={% url core_bluescreen %}" http-equiv="refresh">
-                <script>window.top.location = "{% url core_bluescreen %}"</script>
-            <![endif]-->
+            <link href="/static/core/imgs/favicon.png" rel="shortcut icon" type="image/ico">
+            <link href="/static/core/imgs/favicon.png" rel="apple-touch-icon">
 
             {% compress css %}
-                <link rel="stylesheet" href="/static/core/css/libs/meyer.reset-2.0.min.css" />
-                <link rel="stylesheet" href="/static/core/css/libs/jquery.tiptip-1.3.min.css" />
-                <link rel="stylesheet" href="/static/core/css/base.css" />
-                <link rel="stylesheet" href="/static/core/css/index.css" />
-                <link rel="stylesheet" href="/static/core/css/error.css" />
+                <link rel="stylesheet" href="/static/core/css/libs/boilerplate.normalize-2.0.min.css">
+                <link rel="stylesheet" href="/static/core/css/libs/jquery.tiptip-1.3.min.css">
+                <link rel="stylesheet" href="/static/core/css/base.css">
+                <link rel="stylesheet" href="/static/core/css/home.css">
+                <link rel="stylesheet" href="/static/core/css/error.css">
+                <link rel="stylesheet" href="/static/core/css/libs/boilerplate.helpers-2.0.min.css">
             {% endcompress %}
 
+            <script>
+                WebFontConfig = {
+                    google: { families: [ 'Lobster::latin', 'Vollkorn:400italic,400:latin' ] }
+                };
+                (function() {
+                    var wf = document.createElement('script');
+                    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                    wf.type = 'text/javascript';
+                    wf.async = 'true';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(wf, s);
+                })();
+            </script>
+
+            <script src="/static/core/js/libs/modernizer-2.0.5.min.js"></script>
         </head>
         <body>
-            <script>document.write("<div id="fade-wrapper">")</script>
-                <header>
-                    <h1>Isaac<br />Bythewood</h1>
-                    <h2>I am a Website Developer located in Morganton, NC</h2>
-                </header>
+            <div id="fade-wrapper">
+                <div id="container">
+                    <div id="no-js-notice">
+                        <p>Enable javascript for optimal website enjoyment!</p>
+                    </div>
 
-                {% block yield %}{% endblock %}
+                    <header>
+                        <h1>Isaac<br />Bythewood</h1>
+                        <h2>I am a Website Developer located in Morganton, NC</h2>
+                    </header>
 
-                <footer>
-                    <p>Copyleft &copy; {% now "Y" %} Isaac Bythewood under the <a href="http://creativecommons.org/licenses/by-sa/3.0/us/" title="Free as in free speech.">Creative Commons Attribution-Share Alike</a> license.</p>
-                    <p>The code for this website can be found on <a href="https://github.com/overshard/django-isaac" title="Use it however you want.">GitHub</a>.</p>
-                </footer>
-            <script>document.write("</div>")</script>
+                    <div id="main" role="main">
+                        {% block yield %}{% endblock %}
+                    </div>
+
+                    <footer>
+                        <p>Copyleft &copy; {% now "Y" %} Isaac Bythewood under the <a href="http://creativecommons.org/licenses/by-sa/3.0/us/" title="Free as in free speech.">Creative Commons Attribution-Share Alike</a> license.</p>
+                        <p>The code for this website can be found on <a href="https://github.com/overshard/django-isaac" title="Use it however you want.">GitHub</a>.</p>
+                    </footer>
+                </div>
+            </div>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
             {% compress js %}
-                <script src="/static/core/js/libs/jquery-1.6.4.min.js"></script>
-                <script src="/static/core/js/libs/jquery.color-2.0.min.js"></script>
-                <script src="/static/core/js/libs/jquery.tiptip-1.3.min.js"></script>
-                <script src="/static/core/js/links.js"></script>
-                <script src="/static/core/js/forms.js"></script>
-                {% if not debug %}
-                    <script src="/static/core/js/libs/google.analytics.min.js"></script>
-                {% endif %}
+                <script defer src="/static/core/js/libs/jquery.color-2.0.min.js"></script>
+                <script defer src="/static/core/js/libs/jquery.tiptip-1.3.min.js"></script>
+                <script defer src="/static/core/js/links.js"></script>
+                <script defer src="/static/core/js/forms.js"></script>
             {% endcompress %}
+
+            {% if not debug %}
+                <script>
+                    window._gaq = [['_setAccount','UA-24288942-3'],['_trackPageview'],['_trackPageLoadTime']];
+                    Modernizr.load({
+                        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+                    });
+                </script>
+            {% endif %}
+
+            <!--[if lt IE 7 ]>
+                <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+                <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+            <![endif]-->
         </body>
     </html>
 {% endspaceless %}

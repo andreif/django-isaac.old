@@ -1,26 +1,3 @@
-@font-face {
-    font-family: "Lobster";
-    font-style: normal;
-    font-weight: normal;
-    src: local("Lobster");
-    src: url("/static/core/fonts/Lobster.woff") format("woff"); }
-
-@font-face {
-    font-family: "Vollkorn";
-    font-style: normal;
-    font-weight: normal;
-    src: local("Vollkorn Regular");
-    src: local("Vollkorn-Regular");
-    src: url("/static/core/fonts/Vollkorn-Regular.woff") format("woff"); }
-
-@font-face {
-    font-family: "Vollkorn";
-    font-style: italic;
-    font-weight: normal;
-    src: local("Vollkorn Italic");
-    src: local("Vollkorn-Italic");
-    src: url("/static/core/fonts/Vollkorn-Italic.woff") format("woff"); }
-
 body {
     text-align: center;
     font-family: "Vollkorn", Georgia, "Times New Roman", Times, Serif;
@@ -29,7 +6,7 @@ body {
     background-color: rgb(218, 216, 204);
     background-image: url("/static/core/imgs/background.jpg");
     text-shadow: 1px 1px white;
-    moz-text-shadow: 1px 1px white; }
+    -moz-text-shadow: 1px 1px white; }
 
 a {
     text-decoration: none;
@@ -40,6 +17,23 @@ a {
     -moz-border-radius: 3px;
     border-radius: 3px; }
 
+.no-js a:hover {
+    background-color: white; }
+
+#no-js-notice {
+    display: none; }
+
+.no-js #no-js-notice {
+    margin-top: -19px;
+    margin-bottom: -40px;
+    display: block;
+    background-color: rgba(100, 0, 0, 0.4); }
+
+.no-js #no-js-notice p {
+    padding: 20px;
+    font-size: 1.2em;
+    text-shadow: none; }
+
 header {
     margin: 50px auto;
     text-align: left;
@@ -48,16 +42,26 @@ header {
 
     header h1 {
         font-family: "Lobster";
-        font-size: 134px; }
+        font-size: 134px;
+        margin: 0;
+        font-weight: normal;
+        line-height: 130px; }
+
+    .no-js header h1 {
+        font-size: 125px;
+        font-weight: bold; }
 
     header h2 {
         font-size: 30px;
         width: 240px;
-        margin-top: -234px;
+        line-height: 30px;
+        margin-top: -228px;
         margin-left: 350px;
-        position: absolute; }
+        position: absolute;
+        font-weight: normal;
+        padding: 0; }
 
-aside {
+#main aside {
     width: 100px;
     text-align: right;
     text-transform: uppercase;
@@ -66,7 +70,7 @@ aside {
     font-weight: bold;
     color: #2d445e; }
 
-section {
+#main section {
     margin: 50px auto;
     text-align: left;
     width: 600px;
@@ -81,6 +85,9 @@ footer {
     color: #777777;
     text-align: center;
     line-height: 20px; }
+
+    footer p {
+        margin: 0; }
 
     footer a {
         color: #708faf; }

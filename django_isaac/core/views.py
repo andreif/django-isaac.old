@@ -1,7 +1,7 @@
 from django.template.response import TemplateResponse
 from django.core.mail import send_mail
 
-def index(request):
+def home(request):
     context = {}
     context['submitted'] = False
 
@@ -13,7 +13,4 @@ def index(request):
         send_mail(subject, message, sender, recipient)
         context['submitted'] = True
 
-    return TemplateResponse(request, 'core/index.html', context)
-
-def bluescreen(request):
-    return TemplateResponse(request, 'core/bluescreen.html')
+    return TemplateResponse(request, 'core/home.html', context)

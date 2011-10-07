@@ -12,7 +12,7 @@
 
     <section id="links">
         <aside>Links</aside>
-        <ul>
+        <ul class="clearfix">
             <li>
                 <a class="top-link" href="http://github.com/overshard" title="My source code for a few projects.">
                     <h3>GitHub</h3>
@@ -50,7 +50,6 @@
                 </a>
             </li>
         </ul>
-        <div id="clear"></div>
     </section>
 
     <section id="biography">
@@ -63,7 +62,7 @@
     <section id="contact">
         <aside>Contact</aside>
         <p>Send me a message about anything, it all goes directly to my phone. If you leave an email address or phone number I'll respond to you as soon as possible.</p>
-        <form action="{% url core_index %}" method="post">{% csrf_token %}
+        <form action="{% url core_home %}" method="post">{% csrf_token %}
             <p>
                 <label for="message">Type your email address and message.</label>
                 <textarea id="message" name="message"></textarea>
