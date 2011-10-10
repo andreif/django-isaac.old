@@ -3,7 +3,7 @@ TEMPLATE_DEBUG = DEBUG
 
 
 # For database and email settings.
-from site_settings import *
+from settings.secret import *
 
 
 CACHES = {
