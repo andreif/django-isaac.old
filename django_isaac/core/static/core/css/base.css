@@ -30,9 +30,12 @@ a {
     background-color: rgba(100, 0, 0, 0.4); }
 
 .no-js #no-js-notice p {
-    padding: 20px;
+    padding: 10px;
     font-size: 1.2em;
     text-shadow: none; }
+
+.js #fade-wrapper {
+    display: none; }
 
 header {
     margin: 50px auto;
