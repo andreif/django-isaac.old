@@ -3,8 +3,7 @@ from django.core.mail import send_mail
 
 
 def home(request):
-    context = {}
-    context['submitted'] = False
+    context = {'submitted': False}
 
     if request.method == 'POST':
         subject = 'Pony From isaacbythewood.com'
