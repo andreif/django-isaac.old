@@ -32,6 +32,7 @@ COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
 
 
 MIDDLEWARE_CLASSES = (
+    'middleware.UrlMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
 )
@@ -45,6 +46,7 @@ EMAIL_PORT = 587
 
 
 ROOT_URLCONF = 'urls'
+REMOVE_WWW = True
 
 
 INSTALLED_APPS = (
