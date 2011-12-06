@@ -119,11 +119,13 @@
 
     #main #submitted h1 {
         font-size: 2.8em;
+        margin: 0;
         margin-bottom: 10px; }
 
     #main #submitted p {
         font-size: 1.2em;
-        font-style: italic; }
+        font-style: italic;
+        margin: 0; }
 
 #main #colophon ul {
     margin-top: 20px;

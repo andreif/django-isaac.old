@@ -4,9 +4,19 @@ import socket
 SITE_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../')
 
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.app_directories.Loader',
-)
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'development.db',
+    }
+}
+
+
+TEMPLATE_LOADERS = ('django.template.loaders.app_directories.Loader',)
 TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.debug',)
 
 
@@ -22,10 +32,8 @@ COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
 
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 

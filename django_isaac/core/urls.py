@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import patterns, url
 
-urlpatterns = patterns('core.views',
-    url(r'^$', 'home', name='core_home'),
-)
+
+urlpatterns = patterns('core.views', url(r'^$', 'home', name='core_home'),)

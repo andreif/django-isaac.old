@@ -1,6 +1,7 @@
 from django.template.response import TemplateResponse
 from django.core.mail import send_mail
 
+
 def home(request):
     context = {}
     context['submitted'] = False
