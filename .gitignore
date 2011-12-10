@@ -13,3 +13,4 @@ build/
 distribute-*.tar.gz
 include/
 lib/
+pip-log.txt

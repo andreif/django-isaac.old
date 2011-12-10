@@ -34,6 +34,11 @@
     .no-js #main #links li:hover, .no-rgba #main #links li:hover {
         background-color: white; }
 
+#main #latest img {
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid white; }
+
 #main #biography p {
     margin-bottom: 20px;
     text-align: justify; }
