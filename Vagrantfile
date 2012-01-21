@@ -8,7 +8,7 @@ Vagrant::Config.run do |config|
 
   # Since the default for django dev is 8000 stick with that this will
   # change once I get nginx puppet working.
-  config.vm.forward_port "http", 8000, 8000
+  config.vm.forward_port 8000, 8000
 
   # Update package lsits and install all our deps
   tasks = [ "sudo aptitude update",
