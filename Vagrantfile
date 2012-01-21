@@ -10,13 +10,14 @@ Vagrant::Config.run do |config|
   # change once I get nginx puppet working.
   config.vm.forward_port "http", 8000, 8000
 
-  # Make sure our repos are up to date
-  config.vm.provision :shell, :inline => "sudo aptitude update"
+  # Update package lsits and install all our deps
+  tasks = [ "sudo aptitude update",
+            "sudo aptitude install -y python-pip git-core",
+            "sudo pip install --upgrade pip",
+            "sudo aptitude build-dep -y python-psycopg2 python-imaging",
+            "cd /vagrant && sudo pip install -r requirements.txt"]
 
-  # Run our puppet provsioning.
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file = "virtualenv.pp"
+  for task in tasks
+    config.vm.provision :shell, :inline => task
   end
 end
-
